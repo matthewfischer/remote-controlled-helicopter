@@ -1,15 +1,18 @@
 {
 	"manifest_version": 2,
-	"name": "Cloud To Butt",
-	"version": "1.0",
-	"description": "Replaces the text 'the cloud' with 'my butt'.",
+	"name": "Remote Controlled Helicopter",
+	"version": "0.1",
+	"description": "Replaces the text 'drone' with 'just a remote controlled helicopter'.",
 	"content_scripts": 
 	[
 		{
 			"matches": ["*://*/*"],
 			"js": ["content_script.js"],
+            "all_frames": true,
 			"run_at": "document_end"
 		}
-	]
+	],
+    "permissions": [
+      "activeTab"
+    ]
 }
-

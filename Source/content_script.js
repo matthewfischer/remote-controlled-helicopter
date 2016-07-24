@@ -6,11 +6,10 @@ function walk(node)
 	// http://is.gd/mwZp7E
 	
 	var child, next;
-	
-	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'
-	    || node.classList.indexOf('ace_editor') > -1) {
-		return;
-	}
+
+//	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea') {
+//		return;
+//	}
 
 	switch ( node.nodeType )  
 	{
@@ -36,12 +35,15 @@ function handleText(textNode)
 {
 	var v = textNode.nodeValue;
 
-	v = v.replace(/\bThe Cloud\b/g, "My Butt");
-	v = v.replace(/\bThe cloud\b/g, "My butt");
-	v = v.replace(/\bthe Cloud\b/g, "my Butt");
-	v = v.replace(/\bthe cloud\b/g, "my butt");
+	v = v.replace(/\bvia drone\b/gi, "via some guy flying a drone");
+	v = v.replace(/\bwith a drone\b/gi, "with some guy flying a drone");
+	v = v.replace(/\bby a drone\b/gi, "by some guy flying a drone");
+	v = v.replace(/\bby drone\b/gi, "by some guy flying a drone");
+	v = v.replace(/\bdrone\b/g, "remote control helicopter");
+	v = v.replace(/\bDrone\b/g, "Remote control helicopter");
+	v = v.replace(/\bdrones\b/g, "remote control helicopters");
+	v = v.replace(/\bDrones\b/g, "Remote control helicopters");
+    
 	
 	textNode.nodeValue = v;
 }
-
-
